@@ -3,6 +3,7 @@ from tensorflow import keras
 import numpy as np
 from utils import *
 
+
 data_set = keras.datasets.mnist
 (training_images, training_labels), (training_images2, training_labels2) = data_set.load_data()
 combined_training_images = np.concatenate((training_images, training_images2))
@@ -48,6 +49,7 @@ def draw(window, grid, clear_button, text):
     draw_toolbar()
     clear_button.draw_button(window)
     test_button.draw_button(window)
+
     Button(200, height - toolbar_height/2 - 25, 50, 50, black, str(text), black).draw_result(window)
     pygame.display.update()
 
